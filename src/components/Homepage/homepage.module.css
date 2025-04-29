@@ -1,0 +1,29 @@
+.homepageContainer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	background: linear-gradient(to right, #f5e8dd, #f1d1d6);
+	> h1,
+	> h2 {
+		color: #764c52;
+	}
+}
+
+.flyingImage {
+	width: 50px;
+	height: 50px;
+}
+.title {
+	animation: titleAnime 1s ease-in;
+}
+@keyframes titleAnime {
+	0% {
+		transform: scale(0.5);
+	}
+
+	100% {
+		transform: scale(1); /* Returns image to the top left */
+	}
+}
