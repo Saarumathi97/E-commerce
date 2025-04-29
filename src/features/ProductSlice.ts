@@ -123,9 +123,7 @@ const productSlice = createSlice({
 		handleSearchedProduct: (state, action) => {
 			state.searchedProduct = action.payload;
 		},
-		handleProduct: (state, action) => {
-			state.productArray = action.payload;
-		},
+
 		handleCartProduct: (state, action) => {
 			const exists = state.cartProduct.find((p) => p.id === action.payload.id);
 			if (!exists) {
@@ -134,6 +132,6 @@ const productSlice = createSlice({
 		},
 	},
 });
-export const { handleSearchedProduct, handleProduct, handleCartProduct } =
+export const { handleSearchedProduct, handleCartProduct } =
 	productSlice.actions;
 export default productSlice.reducer;

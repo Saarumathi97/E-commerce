@@ -8,10 +8,9 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import {
 	handleSearchedProduct,
-	handleProduct,
 	handleCartProduct,
 } from '../../features/ProductSlice';
-import { Mic, ShoppingBasket } from '@mui/icons-material';
+import { ShoppingBasket } from '@mui/icons-material';
 import SpeechConvert from '../SpeechConvert';
 const ProductPage = () => {
 	const { productArray, searchedProduct, cartProduct } = useSelector(
@@ -39,7 +38,7 @@ const ProductPage = () => {
 		} else {
 			setFilterProducts(productArray);
 		}
-	}, [searchedProduct]);
+	}, [searchedProduct, productArray]);
 
 	return (
 		<>
@@ -87,6 +86,9 @@ const ProductPage = () => {
 							className={styles.productCard}
 							onMouseEnter={() => {
 								setShowHoverProduct(index);
+							}}
+							onMouseLeave={() => {
+								setShowHoverProduct(-1);
 							}}>
 							<div className={styles.imageContainer}>
 								<img

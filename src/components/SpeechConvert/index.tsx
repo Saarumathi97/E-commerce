@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { GraphicEq, Mic, MicRounded } from '@mui/icons-material';
+import { GraphicEq, Mic } from '@mui/icons-material';
 import { handleSearchedProduct } from '../../features/ProductSlice';
 import { useDispatch } from 'react-redux';
 const SpeechConvert = () => {
-	const [text, setText] = useState('');
 	const [isListening, setIsListening] = useState(false);
 	const dispatch = useDispatch();
 	// Use useRef with proper type annotation
@@ -37,7 +36,7 @@ const SpeechConvert = () => {
 		};
 
 		recognitionRef.current = recognition;
-	}, []);
+	}, [dispatch]);
 
 	const toggleListening = () => {
 		if (recognitionRef.current) {
